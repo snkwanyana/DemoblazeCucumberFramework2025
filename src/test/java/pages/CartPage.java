@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import utils.ReusableFunctions;
 
 import java.time.Duration;
 import java.util.List;
@@ -42,7 +43,7 @@ public class CartPage {
 //        String productName = productTitle_xpath.getText();
 //        Assert.assertEquals(productName,name);
         //=================================
-        //// Extract rows
+        // Extract rows
         List<WebElement> rows = table_tagName.findElements(By.tagName("tr"));
         // Loop through rows
         for(WebElement row : rows){
@@ -55,6 +56,7 @@ public class CartPage {
                 }
             }
         }
+
 
     }
 
