@@ -32,7 +32,7 @@ public class PlaceOrderPage {
 
     @FindBy(xpath = "//h2[contains(text(),'Thank you for your purchase!')]")
     WebElement confirmationMessage_xpath;
-    @FindBy(xpath = "//button[contains(text(),'OK1')]")
+    @FindBy(xpath = "//button[contains(text(),'OK')]")
     WebElement okButton_xpath;
     @FindBy(xpath = "//button[contains(text(),'Close')]")
     WebElement closeButton_xpath;
