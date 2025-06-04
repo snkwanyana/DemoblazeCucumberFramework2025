@@ -1,8 +1,8 @@
-Feature: Order iterm
+Feature: Purchase monitor online
 
-  Scenario Outline: As a user, I want to be able to order an item online
+  Scenario Outline: As a user, I want to be able to order monitor online
     Given Verify that you are in the product store
-    When Click category name under categories <catagory>
+    When Click category name under categories <category>
     And Click on any item of your choice <itemName>
     And Add the selected item to cart
     Then Verify the message on the popup <confirmationMessage>
@@ -22,6 +22,5 @@ Feature: Order iterm
     Then Verify that the order was successfully purchased
 
     Examples:
-      | name      | country      | city         | creditCard | month | year | itemName     | confirmationMessage | catagory |
-      | Purchaser | South Africa | Johannesburg | 0123456789 | 12    | 25   | Sony vaio i5 | Product added       | Laptops  |
-
+      | name      | country      | city         | creditCard | month | year | itemName         | confirmationMessage | category |
+      | Purchaser | South Africa | Johannesburg | 0123456789 | 12    | 25   | Apple monitor 24 | Product added       | Monitors |

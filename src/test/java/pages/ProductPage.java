@@ -8,14 +8,14 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class ItemsDetailsPage {
+public class ProductPage {
 
     public WebDriver driver;
 
     @FindBy(xpath = "//a[contains(text(),'Add to cart')]")
     WebElement addToCartButton_xpath;
 
-    public ItemsDetailsPage(WebDriver driver){
+    public ProductPage(WebDriver driver){
         this.driver = driver;
     }
 

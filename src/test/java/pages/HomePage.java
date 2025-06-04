@@ -25,8 +25,20 @@ public class HomePage {
         home_xpath.isDisplayed();
     }
 
-    public void clickLaptops(){
-        laptops_xpath.click();
+    public void clickOnTheName(String catagory){
+        int attempts = 0;
+        while (attempts < 6) {
+            try {
+                Thread.sleep(2000);
+                WebElement element = driver.findElement(By.xpath("//a[contains(text(),'"+catagory+"')]"));
+                element.click();
+                break;
+            } catch (StaleElementReferenceException e) {
+                attempts++;
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
 }

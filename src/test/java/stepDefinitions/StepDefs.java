@@ -10,7 +10,6 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utils.Base;
-import utils.Screenshorts;
 
 public class StepDefs extends Base {
 
@@ -20,28 +19,28 @@ public class StepDefs extends Base {
         homePage.verifyHomePageIsVisible();
     }
 
-    @When("Click Laptops under categories")
-    public void click_laptops_under_categories() {
+    @When("Click category name under categories {}")
+    public void click_category_name_under_categories(String catagory) {
 
-        homePage.clickLaptops();
+        homePage.clickOnTheName(catagory);
     }
-    @And("Click on any laptop of your choice {}")
-    public void click_on_any_laptop_of_your_choice(String laptopName) throws InterruptedException {
+    @And("Click on any item of your choice {}")
+    public void click_on_any_item_of_your_choice(String laptopName) {
 
-        laptopsPages.selectLaptopOfYourChoice(laptopName);
+        homePage.clickOnTheName(laptopName);
     }
-    @And("Add the laptop to cart")
-    public void add_the_laptop_to_cart() {
+    @And("Add the selected item to cart")
+    public void add_the_selected_item_to_cart() {
 
-        itemsDetailsPage.addToCart();
+        productPage.addToCart();
     }
     @Then("Verify the message on the popup {}")
     public void verify_the_message_on_the_popup(String message) throws InterruptedException {
-        itemsDetailsPage.confirmItemIsAdded(message);
+        productPage.confirmItemIsAdded(message);
     }
     @And("click OK button")
     public void click_ok_button() {
-        itemsDetailsPage.clickOkButton();
+        productPage.clickOkButton();
     }
     @And("Click on Cart button")
     public void click_on_cart_button() {

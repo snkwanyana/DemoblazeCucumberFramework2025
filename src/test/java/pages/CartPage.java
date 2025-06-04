@@ -40,9 +40,6 @@ public class CartPage {
 
     public void verifyAddedLaptopIsDisplayed(String name){
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(productPage_xpath));
-//        String productName = productTitle_xpath.getText();
-//        Assert.assertEquals(productName,name);
-        //=================================
         // Extract rows
         List<WebElement> rows = table_tagName.findElements(By.tagName("tr"));
         // Loop through rows
@@ -56,8 +53,6 @@ public class CartPage {
                 }
             }
         }
-
-
     }
 
     public void clickPlaceOerderButton(){
